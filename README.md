@@ -144,6 +144,17 @@ extension Interstitial: DisplayAdDelegate {
 **Banner** and **AutorefreshBanner** automatically show ads when they are in a hierarchy.
 For other types, you must call the display manually
 
+**AutorefreshBanner**
+
+To prevent the banner from updating, it must be hidden.
+
+``` swift
+
+banner.hideAd()
+
+```
+
+
 **Interstitial**
 
 ``` swift
