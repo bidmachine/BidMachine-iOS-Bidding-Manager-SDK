@@ -65,7 +65,7 @@ extension MediationAdapterWrapperController {
     
     func load(_ delegate: MediationAdapterWrapperControllerDelegate, _ price: Double = 0) {
         guard concurentWrappers.count > 0 else {
-            self.delegate.flatMap { $0.controllerDidComplete(self) }
+            delegate.controllerDidComplete(self)
             return
         }
         

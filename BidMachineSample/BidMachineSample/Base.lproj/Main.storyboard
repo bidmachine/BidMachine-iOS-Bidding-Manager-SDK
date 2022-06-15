@@ -12,7 +12,7 @@
         <!--Banner-->
         <scene sceneID="kHT-up-7xR">
             <objects>
-                <viewController id="ClG-0x-kf3" customClass="Banner" sceneMemberID="viewController">
+                <viewController id="ClG-0x-kf3" customClass="Banner" customModule="BidMachineSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtr-hW-vK4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                     <tabBarItem key="tabBarItem" title="Banner" id="Mlr-mV-2OG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="banner" destination="YLk-a8-206" id="26T-lX-jmZ"/>
+                        <outlet property="banner" destination="YLk-a8-206" id="o8f-va-C4P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WmV-Ai-inl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -46,7 +46,7 @@
         <!--Rewarded-->
         <scene sceneID="z7N-Td-A6J">
             <objects>
-                <viewController id="9Rz-vo-X8c" customClass="Rewarded" sceneMemberID="viewController">
+                <viewController id="9Rz-vo-X8c" customClass="Rewarded" customModule="BidMachineSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pg9-yg-bdI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
         <!--Interstitial-->
         <scene sceneID="hD1-Jo-qW7">
             <objects>
-                <viewController id="RkP-kb-Xap" customClass="Interstitial" sceneMemberID="viewController">
+                <viewController id="RkP-kb-Xap" customClass="Interstitial" customModule="BidMachineSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBK-xm-TFD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
         <!--ABanner-->
         <scene sceneID="7ve-qm-j0u">
             <objects>
-                <viewController id="dJp-gT-bqi" customClass="ABanner" sceneMemberID="viewController">
+                <viewController id="dJp-gT-bqi" customClass="ABanner" customModule="BidMachineSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zTf-XL-QFx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +122,7 @@
                     <tabBarItem key="tabBarItem" title="ABanner" id="Auf-js-djr"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="autorefreshBanner" destination="PDS-9V-xWm" id="XDG-fb-rcE"/>
+                        <outlet property="banner" destination="PDS-9V-xWm" id="y7V-Wb-mO7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zys-Iw-CJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
