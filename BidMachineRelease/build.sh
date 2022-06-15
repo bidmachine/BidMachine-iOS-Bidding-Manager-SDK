@@ -110,7 +110,7 @@ for scheme in ${LIB_SCHEMES[@]}; do
 done
 
 compress
-# upload
+upload
 
 end=`date +%s`
 runtime=$((end-start))
