@@ -19,8 +19,7 @@ class Rewarded: BaseController {
         rewarded.delegate = self
         rewarded.controller = self
         rewarded.loadAd {
-            $0.appendAdSize(.banner)
-                .appendTimeout(20)
+            $0.appendTimeout(20)
             $0.prebidConfig.appendTimeout(5)
                 .appendAdUnit(NetworDefines.bidmachine.name, [:])
                 .appendAdUnit(NetworDefines.applovin.name, ["unitId":"YOUR_ID"])
