@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.author                   = { "Stack" => "https://explorestack.com/bidmachine/" }
 
   spec.platform                 = :ios, '10.0'
-  spec.source                   = { :http => "https://s3-us-west-1.amazonaws.com/appodeal-ios/BidMachineMediation/#{spec.version}/BidMachine.zip" }
+  spec.source                   = { :http => "https://s3-us-west-1.amazonaws.com/appodeal-ios/BidMachineMediation/#{spec.version}/BidMachineMediation.zip" }
 
   spec.libraries                = "xml2", "z"
   spec.swift_versions           = "4.0", "4.2", "5.0"
@@ -25,11 +25,27 @@ Pod::Spec.new do |spec|
   }
 
   spec.default_subspec = 'Core'
+
   spec.subspec 'Core' do |ss|
-    ss.vendored_frameworks = "BidMachine.xcframework"
-    ss.dependency 'StackProtobuf', '~> 0.8.1'
-    ss.dependency 'StackModules', '~> 1.2.1'
-    ss.dependency 'Protobuf', '~> 3.9'
+    ss.vendored_frameworks = "BidMachineMediationModule.xcframework"
+  end
+
+  spec.subspec 'BidMachine' do |ss|
+    ss.vendored_frameworks = "BidMachineMediationAdapter.xcframework"
+    ss.dependency 'BDMIABAdapter', '~> 1.9.4.0'
+    ss.dependency 'BidMachineMediationModule/Core'
+  end
+
+  spec.subspec 'Applovin' do |ss|
+    ss.vendored_frameworks = "ApplovinMediationAdapter.xcframework"
+    ss.dependency 'AppLovinSDK', '~> 11.3.3'
+    ss.dependency 'BidMachineMediationModule/Core'
+  end
+
+  spec.subspec 'AdMob' do |ss|
+    ss.vendored_frameworks = "AdMobMediationAdapter.xcframework"
+    ss.dependency 'Google-Mobile-Ads-SDK', '~> 9.5.0'
+    ss.dependency 'BidMachineMediationModule/Core'
   end
   
 end
