@@ -1,6 +1,10 @@
 ![BidMachine iOS](https://appodeal-ios.s3-us-west-1.amazonaws.com/docs/bidmachine.png)
 # BidMachine-iOS-Mediation-SDK
 
+[<img src="https://img.shields.io/badge/SDK%20Version-1.9.4-brightgreen">](https://docs.bidmachine.io/docs/in-house-mediation-1)
+[<img src="https://img.shields.io/badge/Applovin%20MAX%20Version-11.3.3-blue">](https://dash.applovin.com/documentation/mediation/ios/getting-started/integration)
+[<img src="https://img.shields.io/badge/AdMob%20Version-9.5.0-blue">](https://developers.google.com/admob/ios/quick-start)
+
 * [Logging](#logging)
 * [Initialization](#initialization)
 * [Loading](#loading)
