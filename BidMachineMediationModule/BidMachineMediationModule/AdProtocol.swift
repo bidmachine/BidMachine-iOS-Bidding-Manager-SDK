@@ -12,6 +12,8 @@ protocol DisplayAd: AnyObject {
     
     var isReady: Bool { get }
     
+    var price: Double { get }
+    
     weak var delegate: DisplayAdDelegate? { get set }
     
     weak var controller: UIViewController? { get set }

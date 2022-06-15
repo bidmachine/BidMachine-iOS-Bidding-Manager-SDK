@@ -67,6 +67,10 @@ extension AutorefreshBanner: DisplayAd {
         return cachedBanner.flatMap { $0.isReady } ?? false
     }
     
+    public var price: Double {
+        return cachedBanner.flatMap { $0.price } ?? 0
+    }
+    
     public func loadAd(_ builder: RequestBuilder) {
         self.request = {
             let request = Request()

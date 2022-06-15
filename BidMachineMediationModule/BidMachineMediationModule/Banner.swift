@@ -66,6 +66,10 @@ extension Banner : DisplayAd {
         return wrapper.flatMap { $0.isReady } ?? false
     }
     
+    public var price: Double {
+        return wrapper.flatMap { $0.price } ?? 0
+    }
+    
     public func loadAd(_ builder: RequestBuilder) {
         let request: Request = Request()
         request.appendAdSize(.banner)
