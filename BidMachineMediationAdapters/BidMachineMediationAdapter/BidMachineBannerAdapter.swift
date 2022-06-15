@@ -18,12 +18,14 @@ class BidMachineBannerAdapter: NSObject, MediationAdapterProtocol {
     var adapterParams: MediationAdapterParamsProtocol
     
     var adapterPrice: Double {
-        return banner.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
+        return CPM
     }
     
     var adapterReady: Bool {
         return banner.isLoaded
     }
+    
+    private var CPM: Double = 0
     
     private lazy var banner: BDMBannerView = {
         let banner = BDMBannerView()
@@ -74,6 +76,7 @@ class BidMachineBannerAdapter: NSObject, MediationAdapterProtocol {
 extension BidMachineBannerAdapter: BDMBannerDelegate {
     
     func bannerViewReady(toPresent bannerView: BDMBannerView) {
+        self.CPM = bannerView.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
         self.loadingDelegate.flatMap { $0.didLoad(self) }
     }
     

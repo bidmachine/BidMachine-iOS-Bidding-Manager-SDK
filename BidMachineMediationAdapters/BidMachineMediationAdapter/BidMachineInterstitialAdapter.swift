@@ -18,12 +18,14 @@ class BidMachineInterstitialAdapter: NSObject, MediationAdapterProtocol {
     var adapterParams: MediationAdapterParamsProtocol
     
     var adapterPrice: Double {
-        return interstitial.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
+        return CPM
     }
     
     var adapterReady: Bool {
         return  interstitial.isLoaded
     }
+    
+    private var CPM: Double = 0
     
     private lazy var interstitial: BDMInterstitial = {
         let interstitial = BDMInterstitial()
@@ -66,6 +68,7 @@ class BidMachineInterstitialAdapter: NSObject, MediationAdapterProtocol {
 extension BidMachineInterstitialAdapter: BDMInterstitialDelegate {
     
     func interstitialReady(toPresent interstitial: BDMInterstitial) {
+        self.CPM = interstitial.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
         self.loadingDelegate.flatMap { $0.didLoad(self) }
     }
     

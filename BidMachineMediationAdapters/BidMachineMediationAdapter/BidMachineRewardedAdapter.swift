@@ -18,12 +18,14 @@ class BidMachineRewardedAdapter: NSObject, MediationAdapterProtocol {
     var adapterParams: MediationAdapterParamsProtocol
     
     var adapterPrice: Double {
-        return rewarded.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
+        return CPM
     }
     
     var adapterReady: Bool {
         return  rewarded.isLoaded
     }
+    
+    private var CPM: Double = 0
     
     private lazy var rewarded: BDMRewarded = {
         let rewarded = BDMRewarded()
@@ -66,6 +68,7 @@ class BidMachineRewardedAdapter: NSObject, MediationAdapterProtocol {
 extension BidMachineRewardedAdapter: BDMRewardedDelegate {
     
     func rewardedReady(toPresent rewarded: BDMRewarded) {
+        self.CPM = rewarded.adObject.flatMap { $0.auctionInfo.price }.flatMap { $0.doubleValue } ?? 0
         self.loadingDelegate.flatMap { $0.didLoad(self) }
     }
     
