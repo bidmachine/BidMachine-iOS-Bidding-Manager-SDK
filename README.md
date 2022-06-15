@@ -141,10 +141,10 @@ extension Interstitial: DisplayAdDelegate {
 
 ## Presenting
 
-Banner and AutorefreshBanner automatically show ads when they are in a hierarchy.
+*Banner* and *AutorefreshBanner* automatically show ads when they are in a hierarchy.
 For other types, you must call the display manually
 
-Interstitial
+*Interstitial*
 
 ``` swift
 
@@ -152,7 +152,7 @@ self.interstitial?.present()
 
 ```
 
-Rewarded
+*Rewarded*
 
 ``` swift
 
