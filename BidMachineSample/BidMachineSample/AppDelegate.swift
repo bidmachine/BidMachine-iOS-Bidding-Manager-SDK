@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import BidMachine
+import AppLovinSDK
+import GoogleMobileAds
 import BidMachineMediationModule
 
 @main
@@ -17,11 +20,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Logging.sharedLog.enableNetworkLog(true)
         Logging.sharedLog.enableAdCallbackLog(true)
         
+        self.startNetworksSession { [weak self] in
+            self.flatMap { $0.registerNetwork() }
+        }
+        
+//        self.registerNetwork()
+
+        return true
+    }
+    
+    func startNetworksSession(_ completion: @escaping () -> Void) {
+        let sdkConfig = BDMSdkConfiguration()
+        let targeting = BDMTargeting()
+        
+        targeting.storeId = "1111"
+        sdkConfig.testMode = false
+        sdkConfig.targeting = targeting
+        
+        BDMSdk.shared().startSession(withSellerID: "1", configuration: sdkConfig) {
+            ALSdk.shared()?.mediationProvider = ALMediationProviderMAX
+            ALSdk.shared()?.initializeSdk()
+            
+            GADMobileAds.sharedInstance().start { _ in
+                completion()
+            }
+        }
+    }
+    
+    func registerNetwork() {
         NetworkRegistration.shared.registerNetwork(NetworDefines.applovin.klass, [:])
         NetworkRegistration.shared.registerNetwork(NetworDefines.admob.klass, [:])
         NetworkRegistration.shared.registerNetwork(NetworDefines.bidmachine.klass, ["sourceId": "1", "testMode" : "false"])
-
-        return true
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
