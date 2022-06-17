@@ -235,6 +235,9 @@ Parameters for initialization are not required
 
 Bidding params :
 
+Each ad unit is configured in the [AdMob dashboard](https://apps.admob.com).
+For each ad unit, you need to set up an eCPM floor
+
 |           | Type                | Attachment | Type   | Example                                 |
 |-----------|---------------------|------------|--------|-----------------------------------------|
 | lineItems | [[String : String]] |            |        | [["price" : "1.0", "unitId" : "1-567"]] |
