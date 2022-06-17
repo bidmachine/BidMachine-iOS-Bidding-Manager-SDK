@@ -9,6 +9,7 @@
 * [Initialization](#initialization)
 * [Loading](#loading)
 * [Presenting](#presenting)
+* [Adaptors](#Adaptors)
 
 ## Logging
 
@@ -176,3 +177,38 @@ self.rewarded?.present {
 }
 
 ```
+
+## Adaptors
+
+#### Adaptor params:
+
+|            | Class                          | Name                          |
+|------------|--------------------------------|-------------------------------|
+| Applovin   | NetworDefines.applovin.klass   | NetworDefines.applovin.name   |
+| BidMachine | NetworDefines.bidmachine.klass | NetworDefines.bidmachine.name |
+| AdMob      | NetworDefines.admob.klass      | NetworDefines.admob.name      |
+
+#### Adapter bidding support: 
+
+|            | Prebid | Postbid |
+|------------|--------|---------|
+| BidMachine |    +   |    +    |
+| Applovin   |    +   |    -    |
+| AdMob      |    -   |    +    |
+
+### BidMachine
+
+Initialized params :
+
+|          | Type   | Example  |
+|----------|--------|----------|
+| sourceId | String | "1"      |
+| testMode | String | "true"   |
+| storeId  | String | "123456" |
+
+Bidding params :
+
+|                 | Type            | Example           |
+|-----------------|-----------------|-------------------|
+| targetingParams | [String:String] | ["key" : "value"] |
+
