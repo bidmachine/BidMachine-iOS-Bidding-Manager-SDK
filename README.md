@@ -10,6 +10,9 @@
 * [Loading](#loading)
 * [Presenting](#presenting)
 * [Adaptors](#Adaptors)
+    + [BidMachine](#bidmachine)
+    + [Applovin](#applovin)
+    + [AdMob](#admob)
 
 ## Logging
 
@@ -211,4 +214,30 @@ Bidding params :
 |                 | Type            | Example           |
 |-----------------|-----------------|-------------------|
 | targetingParams | [String:String] | ["key" : "value"] |
+
+### Applovin
+
+Initialized params :
+
+Parameters for initialization are not required
+
+Bidding params :
+
+|        | Type   | Example |
+|--------|--------|---------|
+| unitId | String | "1-567" |
+
+### AdMob
+
+Initialized params :
+
+Parameters for initialization are not required
+
+Bidding params :
+
+|           | Type                | Attachment | Type   | Example                                 |
+|-----------|---------------------|------------|--------|-----------------------------------------|
+| lineItems | [[String : String]] |            |        | [["price" : "1.0", "unitId" : "1-567"]] |
+|           |                     | price      | String | "1.0"                                   |
+|           |                     | unitId     | String | "1-567"                                 |
 
