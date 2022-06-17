@@ -10,7 +10,7 @@ import AppLovinSDK
 
 class ApplovinNetwork: MediationNetworkProtocol {
     
-    var networkName: String = NetworDefines.applovin.name
+    var networkName: String = NetworkDefines.applovin.name
     
     weak var delegate: MediationNetworkDelegate?
     

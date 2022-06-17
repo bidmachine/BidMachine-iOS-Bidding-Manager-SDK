@@ -48,9 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func registerNetwork() {
-        NetworkRegistration.shared.registerNetwork(NetworDefines.applovin.klass, [:])
-        NetworkRegistration.shared.registerNetwork(NetworDefines.admob.klass, [:])
-        NetworkRegistration.shared.registerNetwork(NetworDefines.bidmachine.klass, ["sourceId": "1", "testMode" : "false"])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.applovin.klass, [:])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.admob.klass, [:])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.bidmachine.klass, ["sourceId": "1", "testMode" : "false"])
     }
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

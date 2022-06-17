@@ -10,7 +10,7 @@ import GoogleMobileAds
 
 class AdMobdNetwork: MediationNetworkProtocol {
     
-    var networkName: String = NetworDefines.admob.name
+    var networkName: String = NetworkDefines.admob.name
     
     weak var delegate: MediationNetworkDelegate?
     

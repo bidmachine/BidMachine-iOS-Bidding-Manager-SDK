@@ -43,8 +43,8 @@ class MediationController {
             request._prebidConfig.adapterParams.count == 0 &&
             request._postbidConfig.adapterParams.count == 0
         {
-            request.prebidConfig.appendAdUnit(NetworDefines.bidmachine.name, MediationParams())
-            request.postbidConfig.appendAdUnit(NetworDefines.bidmachine.name, MediationParams())
+            request.prebidConfig.appendAdUnit(NetworkDefines.bidmachine.name, MediationParams())
+            request.postbidConfig.appendAdUnit(NetworkDefines.bidmachine.name, MediationParams())
         }
         
         let preBidOperation = PreBidOperation(request)

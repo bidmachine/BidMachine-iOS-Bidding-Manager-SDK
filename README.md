@@ -48,9 +48,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     }
 
 func registerNetwork() {
-        NetworkRegistration.shared.registerNetwork(NetworDefines.applovin.klass, [:])
-        NetworkRegistration.shared.registerNetwork(NetworDefines.admob.klass, [:])
-        NetworkRegistration.shared.registerNetwork(NetworDefines.bidmachine.klass, [:])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.applovin.klass, [:])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.admob.klass, [:])
+        NetworkRegistration.shared.registerNetwork(NetworkDefines.bidmachine.klass, [:])
     }
 
 func startNetworksSession(_ completion: @escaping () -> Void) {
@@ -89,12 +89,12 @@ interstitial.loadAd {
                 // .appendAdSize(.banner) // if needed (mrec, banner, leaderboard size set)
                 // .appendPriceFloor(30)  // if needed (set your custom price)
             $0.prebidConfig.appendTimeout(5)
-                .appendAdUnit(NetworDefines.bidmachine.name, [:])
-                .appendAdUnit(NetworDefines.applovin.name, ["unitId":"YOUR_ID"])
+                .appendAdUnit(NetworkDefines.bidmachine.name, [:])
+                .appendAdUnit(NetworkDefines.applovin.name, ["unitId":"YOUR_ID"])
             
             $0.postbidConfig.appendTimeout(5)
-                .appendAdUnit(NetworDefines.bidmachine.name, [:])
-                .appendAdUnit(NetworDefines.admob.name, ["lineItems" : [
+                .appendAdUnit(NetworkDefines.bidmachine.name, [:])
+                .appendAdUnit(NetworkDefines.admob.name, ["lineItems" : [
                     ["price" : 10, "unitId" : "YOUR_ADMOB_UNIT_ID_FOR_PRICE_10"],
                     ["price" : 9, "unitId" : "YOUR_ADMOB_UNIT_ID_FOR_PRICE_9"],
                     ["price" : 8, "unitId" : "YOUR_ADMOB_UNIT_ID_FOR_PRICE_8"],
@@ -187,9 +187,9 @@ self.rewarded?.present {
 
 |            | Class                          | Name                          |
 |------------|--------------------------------|-------------------------------|
-| Applovin   | NetworDefines.applovin.klass   | NetworDefines.applovin.name   |
-| BidMachine | NetworDefines.bidmachine.klass | NetworDefines.bidmachine.name |
-| AdMob      | NetworDefines.admob.klass      | NetworDefines.admob.name      |
+| Applovin   | NetworkDefines.applovin.klass   | NetworkDefines.applovin.name   |
+| BidMachine | NetworkDefines.bidmachine.klass | NetworkDefines.bidmachine.name |
+| AdMob      | NetworkDefines.admob.klass      | NetworkDefines.admob.name      |
 
 #### Adapter bidding support: 
 

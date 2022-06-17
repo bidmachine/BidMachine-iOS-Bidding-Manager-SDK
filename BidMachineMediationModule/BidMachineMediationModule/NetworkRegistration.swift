@@ -20,7 +20,7 @@ class NetworConstants: NSObject {
 }
 
 @objc (BMMNetworDefines) public
-class NetworDefines: NSObject {
+class NetworkDefines: NSObject {
     
     @objc public static
     let bidmachine = NetworConstants("BidMachine", "BidMachineMediationAdapter.BidMachineNework")

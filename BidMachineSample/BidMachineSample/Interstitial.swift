@@ -21,12 +21,12 @@ class Interstitial: BaseController {
         interstitial.loadAd {
             $0.appendTimeout(20)
             $0.prebidConfig.appendTimeout(5)
-                .appendAdUnit(NetworDefines.bidmachine.name, [:])
-                .appendAdUnit(NetworDefines.applovin.name, ["unitId":"YOUR_ID"])
+                .appendAdUnit(NetworkDefines.bidmachine.name, [:])
+                .appendAdUnit(NetworkDefines.applovin.name, ["unitId":"YOUR_ID"])
             
             $0.postbidConfig.appendTimeout(5)
-                .appendAdUnit(NetworDefines.bidmachine.name, [:])
-                .appendAdUnit(NetworDefines.admob.name, ["lineItems" : [
+                .appendAdUnit(NetworkDefines.bidmachine.name, [:])
+                .appendAdUnit(NetworkDefines.admob.name, ["lineItems" : [
                     ["price" : 10, "unitId" : "ca-app-pub-3940256099942544/4411468910"],
                     ["price" : 9, "unitId" : "ca-app-pub-3940256099942544/4411468910"],
                     ["price" : 8, "unitId" : "ca-app-pub-3940256099942544/4411468910"],
