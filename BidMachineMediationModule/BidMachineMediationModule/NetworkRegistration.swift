@@ -19,7 +19,7 @@ class NetworConstants: NSObject {
     }
 }
 
-@objc (BMMNetworDefines) public
+@objc (BMMNetworkDefines) public
 class NetworkDefines: NSObject {
     
     @objc public static
